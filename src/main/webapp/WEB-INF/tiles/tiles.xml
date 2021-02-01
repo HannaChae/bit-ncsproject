@@ -4,7 +4,9 @@
 
 <tiles-definitions>
     <definition name="home" template="/WEB-INF/views/home.jsp">
-    
-	
+	</definition>
+	<definition name="mem:*" template="/WEB-INF/views/mem/{1}.jsp">
+	</definition>
+	<definition name="cmm:*" template="/WEB-INF/views/cmm/{1}.jsp">
 	</definition>
 </tiles-definitions>
