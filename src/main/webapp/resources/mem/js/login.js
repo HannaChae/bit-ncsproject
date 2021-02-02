@@ -5,10 +5,10 @@ mem.home = demo => {
 	location.href = `../`
 })
 }
-mem.join = demo => {
-	$(`#join-btn`).click( e =>
+mem.login = demo => {
+	$(`#login-btn`).click( e =>
 	$.ajax({
-		url:`/members`,
+		url:`/members/login`,
 		type: 'POST',
 		data: JSON.stringify({
 			memid: $('#memid').val(),
@@ -17,11 +17,11 @@ mem.join = demo => {
 		dataType: 'json',
 		contentType: 'application/json',
 		success: data => {
-			location.href=`/mem/login`
+			location.href=`/mem/myPage`
 		},
 		error: error => {
 			alert(`Fail`)
-			console.log(`회원가입 실패 : ${e.responseText}`)
+			console.log(`로그인 실패 : ${e.responseText}`)
 		}
 	})
 	)

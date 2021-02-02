@@ -14,11 +14,12 @@
 <h1>
 Home
 <button type="button" class="joinPage-btn" id="joinPage-btn">회원가입</button>	  
+<button type="button" class="loginPage-btn" id="loginPage-btn">로그인</button>	
 </h1>
+<script src="${cmm}/js/home.js"></script>
 <script>
-$(`#joinPage-btn`).click(function(){
-	location.href = `mem/join`
-})
+cmm.joinPage()
+cmm.loginPage()
 </script>
 </body>
 </html>

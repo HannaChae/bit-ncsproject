@@ -5,4 +5,9 @@
 	insert into members (memid, password)
 	values (#{memid}, #{password})
 </insert>
+<select id="selectById" resultType="com.example.demo.mem.service.Member"
+parameterType="com.example.demo.mem.service.Member">
+	select memid, password from members
+	where memid like #{memid} and password like #{password}
+</select>
 </mapper>

@@ -18,13 +18,10 @@
 <input type="password" placeholder="Enter pw" id="password" required>
 <button type="button" class="join-btn" id="join-btn">완료</button>
 </form>
+<script src="${mem}/js/join.js"></script>
 <script>
-$(`#home-btn`).click(function(){
-	location.href = `../`
-})
-$(`#join-btn`).click(function(){
-	mem.join
-})
+mem.home()
+mem.join()
 </script>
 </body>
 </html>

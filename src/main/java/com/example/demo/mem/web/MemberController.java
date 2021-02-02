@@ -1,5 +1,7 @@
 package com.example.demo.mem.web;
 
+import java.util.Map;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +26,13 @@ public class MemberController {
 	@Autowired MemberService memberService;
 	
 	@PostMapping("")
-	public Messenger join(@RequestBody Member member) {
-		return (memberService.join(member) == 1) ? Messenger.SUCCESS : Messenger.FAILURE;
+	public Messenger join(@RequestBody Member m) {
+        logger.info("컨트롤러에 들어옴");
+		return (memberService.join(m) == 1) ? Messenger.SUCCESS : Messenger.FAILURE;
 	}
 	
-
+	@PostMapping("/login")
+	public Map<?,?> login(@RequestBody Member m){
+		return memberRepository.selectById(m);
+	}
 }
