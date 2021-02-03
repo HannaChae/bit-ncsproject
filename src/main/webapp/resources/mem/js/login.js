@@ -1,11 +1,11 @@
 'use strict'
 var mem = mem || {}
-mem.home = demo => {
+mem.home = x => {
 	$(`#home-btn`).click( e => {
 	location.href = `../`
 })
 }
-mem.login = demo => {
+mem.login = x => {
 	$(`#login-btn`).click( e =>
 	$.ajax({
 		url:`/members/login`,
@@ -21,7 +21,7 @@ mem.login = demo => {
 		},
 		error: error => {
 			alert(`Fail`)
-			console.log(`로그인 실패 : ${e.responseText}`)
+			console.log(`로그인 실패 `)
 		}
 	})
 	)

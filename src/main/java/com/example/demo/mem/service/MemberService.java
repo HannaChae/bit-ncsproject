@@ -13,7 +13,7 @@ public class MemberService {
 	public int join(Member m) {
 		return memberRepository.insert(m);
 	}
-	public Map<?,?> login(Member m) {
+	public Member login(Member m) {
 		return memberRepository.selectById(m);
 	}
 

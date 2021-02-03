@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 public interface MemberRepository {
 
 	public int insert(Member m);
-	public Map<?,?> selectById(Member m);
+	public Member selectById(Member m);
 
 }

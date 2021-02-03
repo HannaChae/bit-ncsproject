@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes({"demo"})
+@SessionAttributes({"demo", "mem", "cmm"})
 public class HomeController {
 	@Autowired HttpSession session;
 	@Autowired HttpServletRequest request;

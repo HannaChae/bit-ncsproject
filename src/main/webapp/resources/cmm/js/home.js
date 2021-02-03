@@ -1,11 +1,11 @@
 'use strict'
 var cmm = cmm || {}
-cmm.joinPage = demo => {
+cmm.joinPage = x => {
 		$(`#joinPage-btn`).click( e=> {
 			location.href = `mem/join`
 		})
 	}
-cmm.loginPage = demo => {
+cmm.loginPage = x => {
 		$(`#loginPage-btn`).click( e=> {
 			location.href = `mem/login`
 		})
