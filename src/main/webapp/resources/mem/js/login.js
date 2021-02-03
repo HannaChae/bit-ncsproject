@@ -17,7 +17,13 @@ mem.login = x => {
 		dataType: 'json',
 		contentType: 'application/json',
 		success: data => {
-			location.href=`/mem/myPage`
+			if(data.message === 'SUCCESS'){
+				sessionStorage.setItem('userid', data.sessionMember.memid)
+				location.href=`/mem/myPage`
+			}else{
+				alert(`로그인 실패`)
+				location.reload();
+			}
 		},
 		error: error => {
 			alert(`Fail`)
