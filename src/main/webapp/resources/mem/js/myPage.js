@@ -5,13 +5,13 @@ mem.home = x => {
 	location.href = `../`
 })
 }
-mem.update = x => {
-	$(`#update-btn`).click( e => {
-	location.href = `../`
+mem.modify = x => {
+	$(`#modify-btn`).click( e => {
+	location.reload();
 })
 }
-mem.delete = x => {
-	$(`#delete-btn`).click( e => {
-	location.href = `../`
+mem.withdrawal = x => {
+	$(`#withdrawal-btn`).click( e => {
+	location.reload();
 })
 }
