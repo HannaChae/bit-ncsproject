@@ -9,5 +9,7 @@ public interface MemberRepository {
 
 	public int insert(Member m);
 	public Member selectById(Member m);
+	public int update(Member m);
+	public int delete(Member m);
 
 }

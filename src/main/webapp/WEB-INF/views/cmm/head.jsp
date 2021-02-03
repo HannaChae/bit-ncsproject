@@ -7,11 +7,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>CRUD</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="${cmm}/js/home.js"></script>
-<script src="${mem}/js/join.js"></script>
-<script src="${mem}/js/login.js"></script>
-<script src="${mem}/js/myPage.js"></script>
+<script src="${cmm}/js/cmm.js"></script>
+<script src="${mem}/js/mem.js"></script>
 </head>
 </html>

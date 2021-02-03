@@ -16,5 +16,11 @@ public class MemberService {
 	public Member login(Member m) {
 		return memberRepository.selectById(m);
 	}
+	public int modify(Member m) {
+		return memberRepository.update(m);
+	}
+	public int withdrawal(Member m) {
+		return memberRepository.delete(m);
+	}
 
 }

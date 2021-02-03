@@ -1,29 +1,26 @@
 <%@ page language="java" pageEncoding="UTF-8" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%
-    request.setCharacterEncoding("UTF-8"); 
-    String cp = request.getContextPath(); 
-%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
+<title>비밀번호 수정</title>
 </head>
 <body>
 <form>
-<h1>로그인</h1><button type="button" class="home-btn" id="home-btn">Home</button>
+<h1>비밀번호 수정</h1>
 <label for="memid"><b>ID</b></label>
 <input type="text" placeholder="Enter ID" id="memid" required>
-<label for="password"><b>PW</b></label>
-<input type="password" placeholder="Enter pw" id="password" required>
-<button type="button" class="login-btn" id="login-btn">로그인</button>
+<label for="password"><b>NEW PW</b></label>
+<input type="password" placeholder="Enter new pw" id="password" required>
+<button type="button" class="modify-btn" id="modify-btn">확인</button>
+<button type="button" class="cancel-btn" id="cancel-btn">취소</button>
 </form>
 <script>
-mem.home()
-mem.login()
+mem.modify()
+mem.cancel()
 </script>
 </body>
 </html>
