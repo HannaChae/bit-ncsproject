@@ -95,10 +95,11 @@ mem.modifyPage = x => {
 mem.withdrawal = x => {
 	$(`#withdrawal-btn`).click( e => {
 			$.ajax({
-			url:`/members/myPage`,
+			url:`/members/withdrawal`,
 			type:`DELETE`,
 			data: JSON.stringify({
-				memid: $('#memid').val()
+				memid: $('#memid').val(),
+				password: $('#password').val()
 			}),
 			dataType:`json`,
 			contentType:`application/json`,

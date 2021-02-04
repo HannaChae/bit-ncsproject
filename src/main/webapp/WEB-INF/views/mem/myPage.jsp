@@ -10,7 +10,7 @@
 </head>
 <body>
 <form>
-<h1>마이페이지</h1><button type="button" class="home-btn" id="home-btn">Home</button>
+<h1>마이페이지 sessionAttributes 값 : ${result}</h1><button type="button" class="home-btn" id="home-btn">Home</button>
 <button type="button" class="modifyPage-btn" id="modifyPage-btn">비밀번호 수정</button>
 <button type="button" class="withdrawal-btn" id="withdrawal-btn">회원 탈퇴</button>
 </form>
