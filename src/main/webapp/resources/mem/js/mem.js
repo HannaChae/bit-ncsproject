@@ -109,3 +109,9 @@ mem.withdrawal = x => {
 		})
 	})
 }
+mem.logout = x =>{
+	$(`#logout-btn`).click( e => {
+		sessionStorage.clear()
+		location.href = `../`
+	})
+}
