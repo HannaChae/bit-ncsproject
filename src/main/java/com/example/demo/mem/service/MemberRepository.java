@@ -11,5 +11,4 @@ public interface MemberRepository {
 	public Member selectById(Member m);
 	public int update(Member m);
 	public int delete(Member m);
-
 }

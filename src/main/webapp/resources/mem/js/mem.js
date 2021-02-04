@@ -40,7 +40,8 @@ mem.login = x => {
 		contentType: 'application/json',
 		success: data => {
 			if(data.message === 'SUCCESS'){
-				sessionStorage.setItem('memid', JSON.stringify($('#memid').val()))
+				sessionStorage.setItem('memid', data.sessionMember.memid)
+				sessionStorage.setItem('password', data.sessionMember.password)
 				location.href=`/mem/myPage`
 			}else{
 				alert(`로그인 실패`)
@@ -60,7 +61,7 @@ mem.modify = x => {
 			url:`/members/modify`,
 			type:`PUT`,
 			data: JSON.stringify({
-				memid: $('#memid').val(),
+				memid: sessionStorage.getItem('memid'),
 				password: $('#password').val()
 			}),
 			dataType:`json`,
@@ -68,8 +69,8 @@ mem.modify = x => {
 			success: data => {
 				if(data.message === 'SUCCESS'){
 					alert('비밀번호 수정 완료')
-						sessionStorage.setItem('memid', JSON.stringify($('#memid').val()))
-						location.href = `/mem/myPage`
+						sessionStorage.setItem('password', data.sessionMember.password)
+						location.reload(); 
 				}else{
 					alert('비밀번호 수정 실패')
 						location.reload();
@@ -82,24 +83,13 @@ mem.modify = x => {
 		})
 	})
 }
-mem.cancel = x => {
-	$(`#cancel-btn`).click( e => {
-	location.href = `/mem/myPage`
-})
-}
-mem.modifyPage = x => {
-	$(`#modifyPage-btn`).click( e => {
-	location.href = `/mem/modify`
-})
-}
 mem.withdrawal = x => {
 	$(`#withdrawal-btn`).click( e => {
 			$.ajax({
 			url:`/members/withdrawal`,
 			type:`DELETE`,
 			data: JSON.stringify({
-				memid: $('#memid').val(),
-				password: $('#password').val()
+				memid: sessionStorage.getItem('memid')
 			}),
 			dataType:`json`,
 			contentType:`application/json`,

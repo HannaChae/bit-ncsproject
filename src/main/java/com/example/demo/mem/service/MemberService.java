@@ -22,5 +22,8 @@ public class MemberService {
 	public int withdrawal(Member m) {
 		return memberRepository.delete(m);
 	}
+	public Member getMember(String memid) {
+		return null;
+	}
 
 }
