@@ -25,18 +25,18 @@ import com.example.demo.mem.service.Member;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes({"demo", "mem", "cmm"})
+@SessionAttributes({"ctx", "mem", "cmm"})
 public class HomeController {
 	@Autowired HttpSession session;
 	@Autowired HttpServletRequest request;
 	
 	@GetMapping("/")
 	public String home(HttpSession session, HttpServletRequest request) {
-		logger.info("demo");
-		String demo = request.getContextPath();
-		session.setAttribute("demo", demo);
-		session.setAttribute("mem", demo+"/resources/mem");
-		session.setAttribute("cmm", demo+"/resources/cmm");
+		logger.info("ctx");
+		String ctx = request.getContextPath();
+		session.setAttribute("ctx", ctx);
+		session.setAttribute("mem", ctx+"/resources/mem");
+		session.setAttribute("cmm", ctx+"/resources/cmm");
 		return "home";
 	}
 		
@@ -44,7 +44,7 @@ public class HomeController {
 	
 	@GetMapping("/mem/{page}")
 	public String member(@PathVariable String page) {
-        logger.info("이동 파일: " + page);
+        logger.info("이동 페이지: " + page);
         return String.format("mem:%s", page);
 	}
 	

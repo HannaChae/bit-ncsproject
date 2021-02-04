@@ -70,6 +70,7 @@ mem.modify = x => {
 				if(data.message === 'SUCCESS'){
 					alert('비밀번호 수정 완료')
 						location.reload(); 
+						sessionStorage.getItem('password')
 						sessionStorage.setItem('password', data.sessionMember.password)
 				}else{
 					alert('비밀번호 수정 실패')
@@ -97,6 +98,7 @@ mem.withdrawal = x => {
 				if(data.message === 'SUCCESS'){
 					alert('회원탈퇴 완료')
 						location.href = `../`
+						sessionStorage.clear()
 				}else{
 					alert('회원탈퇴 실패')
 						location.reload();
