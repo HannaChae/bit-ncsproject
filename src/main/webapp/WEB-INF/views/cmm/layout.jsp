@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<jsp:include page="./cmm/head.jsp"/>
+<tiles:insertAttribute name="head"/>
 </head>
 <body>
 <tiles:insertAttribute name="container"/>
-<jsp:include page="./cmm/footer.jsp"/>
+<tiles:insertAttribute name="footer"/>
 </body>
 </html>

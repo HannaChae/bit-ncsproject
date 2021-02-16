@@ -69,8 +69,7 @@ mem.modify = x => {
 			success: data => {
 				if(data.message === 'SUCCESS'){
 					alert('비밀번호 수정 완료')
-						location.reload(); 
-						sessionStorage.getItem('password')
+						location.reload();
 						sessionStorage.setItem('password', data.sessionMember.password)
 				}else{
 					alert('비밀번호 수정 실패')
