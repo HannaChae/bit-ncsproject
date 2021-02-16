@@ -21,17 +21,17 @@ cmm = (() => {
 			location.href=`${x}/move/prd/add`
 		})
 	}
-	return { init, home, add }
-})()
-cmm.joinPage = x => {
+	const joinPage = x => {
 		$(`#joinPage-btn`).click( e=> {
 			e.preventDefault()
 			location.href = `${x}/move/mem/join`
 		})
 	}
-cmm.loginPage = x => {
+	const loginPage = x => {
 		$(`#loginPage-btn`).click( e=> {
 			e.preventDefault()
 			location.href = `${x}/move/mem/login`
 		})
 	}
+	return { init, home, add, joinPage, loginPage }
+})()
