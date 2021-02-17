@@ -6,16 +6,15 @@
 
 
    <h1>글 목록</h1>
- 
-    <li><a id="home-btn" href="#">Home</a></li>
-    <li><a id="back" href="#">Back</a></li>
     <table id="tab" >
         <thead>
             <tr>
                 <th style="width:20%" class="text-center">글번호</th>
                 <th style="width:20%" class="text-center">제목</th>
-                <th style="width:20%" class="text-center">조회수</th>
+                <th class="text-center">등록 시간</th>
     </table>
+    <button class="button" id="home-btn">Home</button>
+    <button class="button" id="back">Back</button>
     <script src="${cmm}/js/cmm.js"></script>
     <script src="${board}/js/brd.js"></script>
     <script>

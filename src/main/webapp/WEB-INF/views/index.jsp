@@ -10,20 +10,34 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<style>
 			h1 { text-align: center; padding-top: 20px; }
+			.button {
+			  background-color: #4CAF50;
+			  border: none;
+			  color: white;
+			  padding: 15px 32px;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  font-size: 16px;
+			  margin: 4px 2px;
+			  cursor: pointer;
+			}
 		</style>
 	</head>
 	<body>
 		<h1>Welcome !</h1>
 		<div style="text-align: center; padding-top: 50px">
-			<button id="prd-btn">제품보기</button>
-			<button id="joinPage-btn">회원가입</button>	  
-			<button id="loginPage-btn">로그인</button>	
+			<button class="button" id="prd-btn">제품보기</button>
+			<button class="button" id="joinPage-btn">회원가입</button>	  
+			<button class="button" id="loginPage-btn">로그인</button>	
+			<button class="button" id="brdPage-btn">게시판</button>	
 		</div>
 		<script src="${cmm}/js/cmm.js"></script>
 		<script>
 			cmm.init(`${ctx}`)
 			cmm.joinPage(`${ctx}`)
 			cmm.loginPage(`${ctx}`)
+			cmm.brdPage(`${ctx}`)
 		</script>
 	</body>
 </html>

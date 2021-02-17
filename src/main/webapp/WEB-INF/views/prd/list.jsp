@@ -15,8 +15,8 @@
 			</table>
 		</div>
 <div style="text-align: center; margin-top:30px;">
-	<button id="add-btn">제품추가</button>
-	<button id="home-btn">HOME</button>
+	<button class="button" id="add-btn">제품추가</button>
+	<button class="button" id="home-btn">HOME</button>
 </div>
 <script src="${cmm}/js/cmm.js"></script>
 <script src="${prdt}/js/prd.js"></script>

@@ -1,9 +1,12 @@
 package com.example.demo.brd.web;
 
-import java.util.HashMap;  
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;   
 import java.util.List;
 import java.util.Map;
-import java.util.function.Supplier;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,46 +32,34 @@ public class BoardController {
 	@Autowired BoardService boardService;
 	
 	@PostMapping("/writer")
-    public Map<?, ?> writter(@RequestBody Board b) {
-        var map = new HashMap<>();
-        map.put("message", (boardRepository.insertWritter(b) == 1) ? "SUCCESS" : "FAILURE");
+    public Map<?, ?> writer(@RequestBody Board b) {
+		String date = String.format("%s %s", LocalDate.now(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("a HH시 mm분")));
+		System.out.println(date);
+        var map = new HashMap<>(); 
+        b.setWrittenDate(date);
+        map.put("message", (boardRepository.insertWriter(b) == 1) ? "SUCCESS" : "FAILURE");
         return map;
     }
-	  public Map<String, Object> hashmap(){
-	        Supplier<Map<String, Object>> s = HashMap::new;
-	        return s.get();
-	    }
-	  
-	  
-//	@GetMapping("/list")
-//  public Map<?,?> list(){
-//		Board a = new Board();
-//		a.set(a.setCount("0"));
-//		a.get(a.set());
-//		var map = hashmap();
-//	
-//      List<Board> l = boardMapper.selectAll();
-//      System.out.println("목록 수: "+l.size());
-//      System.out.println( boardService.count());
-//      map.put("list", l);
-//      map.put("count", boardService.count());
-//      return map;
-//
-//  }
+	
 	@GetMapping("/list")
     public List<Board> list(){
         return boardRepository.selectAll();
     }
+	
 	@GetMapping("/{title}")
 	public Board det(@PathVariable String title) {
 		return boardRepository.selectById(title);
-	}
+	}	
+	
 	@PutMapping("/update")
 	public Map<?, ?> update(@RequestBody Board b){
 		var map = new HashMap<>();
+		String date = String.format("%s %s", LocalDate.now(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("a HH시 mm분")));
+		b.setWrittenDate(date);
 		map.put("message",boardRepository.update(b) == 1 ? "SUCCESS" : "FAILURE");
 		return map;
 	}
+	
 	@DeleteMapping("/remove")
 	public Map<?, ?> remove(@RequestBody Board b){
 		var map = new HashMap<>();

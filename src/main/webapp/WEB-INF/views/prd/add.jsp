@@ -30,10 +30,10 @@
 	  </tbody>
 	</table>
 	<div style="text-align: center; padding-top: 30px;">			
-		<button type="submit" id="done-btn">등록하기</button>
-		<button type="reset">다시 작성하기</button>
-		<button id="back-btn" onClick="history.back()">뒤로가기</button>
-		<button id="home-btn">HOME</button>
+		<button class="button" type="submit" id="done-btn">등록하기</button>
+		<button class="button" type="reset">다시 작성하기</button>
+		<button class="button" id="back-btn" onClick="history.back()">뒤로가기</button>
+		<button class="button" id="home-btn">HOME</button>
 	</div>
 </form>
 <script src="${cmm}/js/cmm.js"></script>

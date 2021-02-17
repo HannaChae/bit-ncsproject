@@ -12,6 +12,6 @@ import lombok.NoArgsConstructor;
 @Data @AllArgsConstructor @Lazy @NoArgsConstructor
 public class Board {
 	private int boardNum;
-	private String memid, password, title, content, writtenDate, updatedDate,count;	
+	private String title, content, writtenDate;	
 }
 

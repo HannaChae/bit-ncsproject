@@ -3,10 +3,10 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <h1>게시판</h1>
- <button id="home-btn">Home</button>
- <button id="myPage-btn">Back</button>
- <button id="wri">글쓰기</button>
- <button id="wri-list">글 목록</button>
+ <button class="button" id="home-btn">Home</button>
+ <button class="button" id="myPage-btn">Back</button>
+ <button class="button" id="wri">글쓰기</button>
+ <button class="button" id="wri-list">글 목록</button>
 <script src="${board}/js/brd.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
 <script src="${mem}/js/mem.js"></script>

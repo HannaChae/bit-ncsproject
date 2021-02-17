@@ -33,5 +33,11 @@ cmm = (() => {
 			location.href = `${x}/move/mem/login`
 		})
 	}
-	return { init, home, add, joinPage, loginPage }
+		const brdPage = x => {
+		$(`#brdPage-btn`).click( e=> {
+			e.preventDefault()
+			location.href = `${x}/move/brd/board`
+		})
+	}
+	return { init, home, add, joinPage, loginPage, brdPage }
 })()

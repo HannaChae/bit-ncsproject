@@ -1,12 +1,8 @@
 'use strict'
 var brd = brd || {}
 brd = (() => {
-	const brdPage = x => {
-		$(`#brdPage`).click(e => {
-			e.preventDefault()
-			location.href=`${x}/move/brd/board`
-		})
-	}
+
+	
 	const back = x => {
 		$(`#back`).click(e => {
 			e.preventDefault()
@@ -25,13 +21,14 @@ brd = (() => {
 			location.href=`${x}/move/brd/writerList`
 		})
 	}
-	const list = x => {
-				$.getJSON(`${x}/boards/list`, d => {
+	const list = x =>{
+		$.getJSON(`${x}/boards/list`, d => {
 				$.each(d, (i, j) => {
 					$(`<tr></td>
 						<td>${j.boardNum}</td>
 						<td><a class="title" href="#" id="${j.boardNum}">${j.title}</a></td>
-						<td>${j.count}</td>
+						<td>${j.writtenDate}</td>
+						
 						</tr>`)
 						.css({padding: `20px`, textAlign: `center`})
 						.appendTo(`#tab`)
@@ -41,10 +38,11 @@ brd = (() => {
 						e.preventDefault()
 						localStorage.setItem(`title`, `${this.id}`)
 						location.href=`${x}/move/brd/det`
+					
 					})
 				})
 			})
-		}
+		}	
 	const writer = x => {
 		$(`#writ`).click(e => {
 			e.preventDefault()
@@ -73,37 +71,40 @@ brd = (() => {
 	const det = x => {
 		$.getJSON(`${x}/boards/${localStorage.getItem(`title`)}`, d => {
 			$(`#boardNum`).text(d.boardNum)
+			$(`#writtenDate`).text(d.writtenDate)
 			$(`#boardTitle`).text(d.title)
 			$(`#boardContent`).text(d.content)
 			
-			 $('#update').click(e => {
-	             $('#boardTitle').html('<input type ="text" id="update-title" value="'+d.title+'"/>')
-	             $('#boardContent').html('<textarea id="update-content" style="height: 300px"> "'+d.content+'"</textarea>')
-	             $(`#update`).html('<div id="confirm">수정완료</div>')
-					$(`#confirm`).click(e => {
-						e.preventDefault()
-						$.ajax({
-							url: `${x}/boards/update`,
-							type: `PUT`,
-							data: JSON.stringify({
-								boardNum: d.boardNum,
-								title: $(`#update-title`).val(),
-								content: $(`#update-content`).val(),
-							}),
-							dataType: `json`,
-							contentType: `application/json`,
-							success: d => {
-								if(d.message === 'SUCCESS') {
-									alert(`수정 성공`)
-									location.href=`${x}/move/brd/writerList`
-								}else {
-									alert(`수정 실패`)
-								}
-							},
-							error: e => { alert(`수정 에러`)}
-						})
-					})          
-        		})
+			 $('#update').click(e => { 
+             $('#boardTitle').html('<input type ="text" id="update-title" value="'+d.title+'"/>')
+             $('#boardContent').html('<textarea id="update-content" style="height: 300px"> "'+d.content+'"</textarea>')
+             $(`#update`).html('<div id="confirm">수정완료</div>')
+				$(`#confirm`).click(e => {
+					e.preventDefault()
+					$.ajax({
+						url: `${x}/boards/update`,
+						type: `PUT`,
+						data: JSON.stringify({
+							boardNum: d.boardNum,
+							title: $(`#update-title`).val(),
+							content: $(`#update-content`).val(),
+						}),
+						dataType: `json`,
+						contentType: `application/json`,
+						success: d => {
+							if(d.message === 'SUCCESS') {
+								alert(`수정 성공`)
+								location.href=`${x}/move/brd/writerList`
+							}else {
+								alert(`수정 실패`)
+							}
+						},
+						error: e => { alert(`수정 에러`)}
+					})
+					})
+             
+        })
+
 			$(`#delete`).click(e => {
 				e.preventDefault()
 				$.ajax({
@@ -127,5 +128,5 @@ brd = (() => {
 			})
 		})
 	}
-	return {brdPage, back, wri, wriList, list, writer, det}
+	return { back, wri, wriList, list, writer, det }
 	})()
