@@ -4,10 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>회원가입</title>
-</head>
 <body>
 <form>
 <h1>회원가입</h1><button type="button" class="home-btn" id="home-btn">Home</button>
@@ -17,8 +13,8 @@
 <input type="password" placeholder="Enter pw" id="password" required>
 <button type="button" class="join-btn" id="join-btn">완료</button>
 </form>
-<script src="${mem}/js/mem.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
+<script src="${mem}/js/mem.js"></script>
 <script>
 cmm.home(`${ctx}`)
 mem.join(`${ctx}`)

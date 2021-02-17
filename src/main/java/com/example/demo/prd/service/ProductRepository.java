@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProductMapper {
+public interface ProductRepository {
 	public int insert(Product prd);
 	public List<Product> selectAll();
 	public Product selectById(int prdId);

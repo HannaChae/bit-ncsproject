@@ -14,10 +14,10 @@
 	</head>
 	<body>
 		<h1>Welcome !</h1>
-		<button type="button" class="joinPage-btn" id="joinPage-btn">회원가입</button>	  
-		<button type="button" class="loginPage-btn" id="loginPage-btn">로그인</button>	
 		<div style="text-align: center; padding-top: 50px">
 			<button id="prd-btn">제품보기</button>
+			<button id="joinPage-btn">회원가입</button>	  
+			<button id="loginPage-btn">로그인</button>	
 		</div>
 		<script src="${cmm}/js/cmm.js"></script>
 		<script>

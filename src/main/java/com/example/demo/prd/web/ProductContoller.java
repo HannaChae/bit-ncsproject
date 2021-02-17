@@ -18,13 +18,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.HomeController;
 import com.example.demo.prd.service.Product;
-import com.example.demo.prd.service.ProductMapper;
+import com.example.demo.prd.service.ProductRepository;
 import com.example.demo.prd.service.ProductService;
 
 @RestController
 @RequestMapping("/products")
 public class ProductContoller {
-	@Autowired ProductMapper productMapper;
+	@Autowired ProductRepository productRepository;
 	@Autowired ProductService productService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 
@@ -38,13 +38,13 @@ public class ProductContoller {
 	
 	@GetMapping("/list")
 	public List<Product> list() {
-		return productMapper.selectAll();
+		return productRepository.selectAll();
 	}
 	
 	@GetMapping("/{prdId}")
 	public Product detail(@PathVariable int prdId) {
 		logger.info("조회한 제품번호: " + prdId);
-		return productMapper.selectById(prdId);
+		return productRepository.selectById(prdId);
 	}
 	
 	@PutMapping("")

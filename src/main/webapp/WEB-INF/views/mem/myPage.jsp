@@ -4,10 +4,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>마이페이지</title>
-</head>
 <body>
 <form>
 <h1>마이페이지</h1>
@@ -17,14 +13,17 @@
 <input type="password" placeholder="Enter new pw" id="password" required>
 <button type="button" class="modify-btn" id="modify-btn">비밀번호 수정</button>
 <button type="button" class="withdrawal-btn" id="withdrawal-btn">회원 탈퇴</button>
+<button type="button" id="brdPage">게시판</button>
 </form>
-<script src="${mem}/js/mem.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
+<script src="${mem}/js/mem.js"></script>
+<script src="${board}/js/brd.js"></script>
 <script>
 cmm.home(`${ctx}`)
 mem.logout(`${ctx}`)
 mem.modify(`${ctx}`)
 mem.withdrawal(`${ctx}`)
+brd.brdPage(`${ctx}`)
 </script>
 </body>
 </html>
