@@ -11,6 +11,8 @@
 <input type="text" placeholder="Enter ID" id="memid" required>
 <label for="password"><b>PW</b></label>
 <input type="password" placeholder="Enter pw" id="password" required>
+<label for="name"><b>NAME</b></label>
+<input type="text" placeholder="Enter name" id="name" required>
 <button type="button" class="button" id="join-btn">완료</button>
 </form>
 <script src="${cmm}/js/cmm.js"></script>

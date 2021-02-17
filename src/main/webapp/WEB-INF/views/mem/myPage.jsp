@@ -9,6 +9,7 @@
 <h1>마이페이지</h1>
 <button type="button" class="button" id="home-btn">Home</button>
 <button type="button" class="button" id="logout-btn">로그아웃</button>
+
 <label for="password"><b>NEW PW</b></label>
 <input type="password" placeholder="Enter new pw" id="password" required>
 <button type="button" class="button" id="modify-btn">비밀번호 수정</button>
@@ -18,9 +19,7 @@
 <script src="${mem}/js/mem.js"></script>
 <script>
 cmm.home(`${ctx}`)
-mem.logout(`${ctx}`)
-mem.modify(`${ctx}`)
-mem.withdrawal(`${ctx}`)
+mem.info(`${ctx}`)
 </script>
 </body>
 </html>

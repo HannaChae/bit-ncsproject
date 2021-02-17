@@ -15,7 +15,8 @@ mem = (() => {
 				type: 'POST',
 				data: JSON.stringify({
 					memid: $('#memid').val(),
-					password: $('#password').val()
+					password: $('#password').val(),
+					name: $('#name').val()
 				}),
 				dataType: 'json',
 				contentType: 'application/json',
@@ -32,95 +33,91 @@ mem = (() => {
 	const login = x => {
 		$(`#login-btn`).click( e => {
 		e.preventDefault()
-		$.ajax({
-			url:`${x}/members/login`,
-			type: 'POST',
-			data: JSON.stringify({
-				memid: $('#memid').val(),
-				password: $('#password').val()
-			}),
-			dataType: 'json',
-			contentType: 'application/json',
-			success: data => {
-				if(data.message === 'SUCCESS'){
-					sessionStorage.setItem('memid', data.sessionMember.memid)
-					sessionStorage.setItem('password', data.sessionMember.password)
-					location.href=`${x}/move/mem/myPage`
-				}else{
-					alert(`로그인 실패`)
-					location.reload();
-				}
-			},
-			error: error => {
-				alert(`Fail`)
-				console.log(`로그인 실패 `)
-			}
-		})
-		})
-	}
-	const modify = x => {
-		$(`#modify-btn`).click( e => {
-			e.preventDefault()
 			$.ajax({
-				url:`${x}/members/modify`,
-				type:`PUT`,
+				url:`${x}/members/login`,
+				type: 'POST',
 				data: JSON.stringify({
-					memid: sessionStorage.getItem('memid'),
+					memid: $('#memid').val(),
 					password: $('#password').val()
 				}),
-				dataType:`json`,
-				contentType:`application/json`,
+				dataType: 'json',
+				contentType: 'application/json',
 				success: data => {
 					if(data.message === 'SUCCESS'){
-						alert('비밀번호 수정 완료')
-							location.reload();
-							sessionStorage.setItem('password', data.sessionMember.password)
+						sessionStorage.setItem('memid', data.sessionMember.memid)
+						sessionStorage.setItem('password', data.sessionMember.password)
+						location.href=`${x}/move/mem/myPage`
 					}else{
-						alert('비밀번호 수정 실패')
-							location.reload();
+						alert(`로그인 실패`)
+						location.reload();
 					}
 				},
 				error: error => {
-				alert(`Fail`)
-				console.log(`비밀번호 수정 실패 `)
+					alert(`Fail`)
+					console.log(`로그인 실패 `)
 				}
 			})
 		})
 	}
-	const withdrawal = x => {
-		$(`#withdrawal-btn`).click( e => {
+	const info = x => {	
+				$(`#modify-btn`).click( e => {
 				e.preventDefault()
-				$.ajax({
-				url:`${x}/members/withdrawal`,
-				type:`DELETE`,
-				data: JSON.stringify({
-					memid: sessionStorage.getItem('memid')
-				}),
-				dataType:`json`,
-				contentType:`application/json`,
-				success: data => {
-					if(data.message === 'SUCCESS'){
-						alert('회원탈퇴 완료')
-							location.href = `${x}/./`
-							sessionStorage.clear()
-					}else{
-						alert('회원탈퇴 실패')
-							location.reload();
-					}
-				},
-				error: error => {
-				alert(`Fail`)
-				console.log(`회원탈퇴 실패 `)
-				}
-			})
-		})
-	}
-	const logout = x =>{
-		$(`#logout-btn`).click( e => {
-			e.preventDefault()
-			sessionStorage.clear()
-			location.href = `${x}/./`
-		})
-	}
-		return { myPage, join, login, modify, withdrawal, logout }
+					$.ajax({
+						url:`${x}/members/modify`,
+						type:`PUT`,
+						data: JSON.stringify({
+							memid: sessionStorage.getItem('memid'),
+							password: $('#password').val()
+						}),
+						dataType:`json`,
+						contentType:`application/json`,
+						success: data => {
+							if(data.message === 'SUCCESS'){
+								alert('비밀번호 수정 완료')
+									location.reload();
+									sessionStorage.setItem('password', data.sessionMember.password)
+							}else{
+								alert('비밀번호 수정 실패')
+									location.reload();
+							}
+						},
+						error: error => {
+							alert(`Fail`)
+							console.log(`비밀번호 수정 실패 `)
+						}
+					})
+				})
+				$(`#withdrawal-btn`).click( e => {
+				e.preventDefault()
+					$.ajax({
+						url:`${x}/members/withdrawal`,
+						type:`DELETE`,
+						data: JSON.stringify({
+							memid: sessionStorage.getItem('memid')
+						}),
+						dataType:`json`,
+						contentType:`application/json`,
+						success: data => {
+							if(data.message === 'SUCCESS'){
+								alert('회원탈퇴 완료')
+									location.href = `${x}/./`
+									sessionStorage.clear()
+							}else{
+								alert('회원탈퇴 실패')
+									location.reload();
+							}
+						},
+						error: error => {
+						alert(`Fail`)
+						console.log(`회원탈퇴 실패 `)
+						}
+					})
+				})
+				$(`#logout-btn`).click( e => {
+					e.preventDefault()
+					sessionStorage.clear()
+					location.href = `${x}/./`
+				})
+		}
+		return { myPage, join, login, info }
 })()

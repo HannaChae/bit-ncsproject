@@ -30,7 +30,8 @@
 			<button class="button" id="prd-btn">제품보기</button>
 			<button class="button" id="joinPage-btn">회원가입</button>	  
 			<button class="button" id="loginPage-btn">로그인</button>	
-			<button class="button" id="brdPage-btn">게시판</button>	
+			<button class="button" id="brdPage-btn">게시판</button>
+			<button class="button" id="admPage-btn">관리자</button>
 		</div>
 		<script src="${cmm}/js/cmm.js"></script>
 		<script>
@@ -38,6 +39,7 @@
 			cmm.joinPage(`${ctx}`)
 			cmm.loginPage(`${ctx}`)
 			cmm.brdPage(`${ctx}`)
+			cmm.admPage(`${ctx}`)
 		</script>
 	</body>
 </html>

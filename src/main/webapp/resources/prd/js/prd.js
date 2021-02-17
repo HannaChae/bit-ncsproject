@@ -50,7 +50,6 @@ prd = (() => {
 			$(`#pName`).text(d.prdName)
 			$(`#pPrice`).text(d.price)
 			$(`#pInventory`).text(d.inventory)
-			
 			$(`#update-btn`).click(e => {
 				$(`#pName`).html('<input id="update-prdName" type="text" value="'+ d.prdName +'"/>')
 				$(`#pPrice`).html('<input id="update-price" type="text" value="'+ d.price +'"/>')

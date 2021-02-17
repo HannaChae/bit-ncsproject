@@ -58,7 +58,6 @@ public class MemberController {
 		logger.info("로그인: "+ m.toString());
         return map;
 	}
-	
 	@PutMapping("/modify")
 	public Map<?,?> modify(@RequestBody Member m){
 		var map = new HashMap<>();
