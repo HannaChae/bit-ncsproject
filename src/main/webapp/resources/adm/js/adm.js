@@ -1,22 +1,22 @@
 'use strict'
 var adm = adm || {}
-adm = (()=>{
+adm = (() => {
 	const manage = x => {
 		$(`#manage-btn`).click(e=> {
 			e.preventDefault()
-			location.href = `${x}/adm/manage`
+			location.href = `${x}/move/adm/manage`
 		})
 	}
 	const regiPage = x => {
 		$(`#regiPage-btn`).click(e=> {
 			e.preventDefault()
-			location.href = `${x}/adm/register`;
+			location.href = `${x}/move/adm/register`;
 		})
 	}
 	const delPage = x => {
 		$(`#delPage-btn`).click(e=> {
 			e.preventDefault()
-			location.href = `${x}/adm/remove`
+			location.href = `${x}/move/adm/remove`
 		})		
 	}
 	const regi = x => {

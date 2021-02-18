@@ -14,5 +14,4 @@
 </form>
 <script src="${adm}/js/adm.js"></script>
 <script>
-adm.regi(`${ctx}`)
 </script>

@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import com.example.demo.mem.service.Member;
 
 @Controller
-@SessionAttributes({"ctx", "mem", "cmm", "prdt", "board"})
+@SessionAttributes({"ctx", "mem", "cmm", "prdt", "board", "adm"})
 public class HomeController {
 	@Autowired HttpSession session;
 	@Autowired HttpServletRequest request;
@@ -35,6 +35,7 @@ public class HomeController {
 		session.setAttribute("cmm", ctx+"/resources/cmm");
 		session.setAttribute("prdt", ctx + "/resources/prd");
     	session.setAttribute("board", ctx+"/resources/brd");
+    	session.setAttribute("adm", ctx+"/resources/adm");
 		return "index";
 	}
 		
