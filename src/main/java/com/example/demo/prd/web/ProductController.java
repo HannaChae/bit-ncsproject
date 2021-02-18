@@ -23,7 +23,7 @@ import com.example.demo.prd.service.ProductService;
 
 @RestController
 @RequestMapping("/products")
-public class ProductContoller {
+public class ProductController {
 	@Autowired ProductRepository productRepository;
 	@Autowired ProductService productService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
